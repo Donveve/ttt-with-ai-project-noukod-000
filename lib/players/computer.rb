@@ -53,7 +53,7 @@ class Player::Computer < Player
     (0..8).to_a.sample
   end
 end
-
+end
 # require 'pry'
 # module Players
 #   class Computer < Player
@@ -151,4 +151,4 @@ end
 #         move
 #     end
 #   end
-# end 
+# end

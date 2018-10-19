@@ -1,6 +1,6 @@
 
 require 'pry'
-# module Players
+ module Players
   class Computer < Player
     WIN_COMBINATIONS = [
     [0,1,2],
@@ -96,4 +96,4 @@ require 'pry'
         move
     end
   end
-# end
+end

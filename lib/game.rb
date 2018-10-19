@@ -98,15 +98,14 @@ class Game
       won? || draw?
     end
     def won?
-      someone_has_won = false
-      WIN_COMBINATIONS.each do |combination|
-        if (combination.all? {|spot| @board.cells[spot] == 'X'} ||
-            combination.all? {|spot| @board.cells[spot] == 'O'} )
-          someone_has_won = true
-        end
-      end
-      someone_has_won
-    end
+   WIN_COMBINATIONS.each do |win_combo|
+     if (board.cells[win_combo[0]] == "X" && board.cells[win_combo[1]] == "X" && board.cells[win_combo[2]] == "X") ||
+        (board.cells[win_combo[0]] == "O" && board.cells[win_combo[1]] == "O" && board.cells[win_combo[2]] == "O")
+        return win_combo
+     end
+   end
+   return false
+ end
     def draw?
       !won? && @board.full?
     end

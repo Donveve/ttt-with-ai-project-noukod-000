@@ -85,7 +85,7 @@ class Game
       #binding.pry
       board_of_X = @board.cells.select do |cell| cell == 'X' end
       board_of_O = @board.cells.select do |cell| cell == 'O' end
-      
+
       num_X = board_of_X.length
       num_O = board_of_O.length
       if num_X == num_O
@@ -100,7 +100,7 @@ class Game
     def won?
       someone_has_won = false
       WIN_COMBINATIONS.each do |combination|
-        if (combination.all? {|spot| @board.cells[spot] == 'X'} || 
+        if (combination.all? {|spot| @board.cells[spot] == 'X'} ||
             combination.all? {|spot| @board.cells[spot] == 'O'} )
           someone_has_won = true
         end
@@ -114,7 +114,7 @@ class Game
       if won?
         the_winner = ''
          WIN_COMBINATIONS.each do |combination|
-          if (combination.all? {|spot| @board.cells[spot] == 'X'} || 
+          if (combination.all? {|spot| @board.cells[spot] == 'X'} ||
               combination.all? {|spot| @board.cells[spot] == 'O'} )
             the_winner = @board.cells[combination[0]]
           end
